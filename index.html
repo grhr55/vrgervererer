@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>CROWN</title>
+
+<meta name="store-url" content="https://apps.apple.com/us/app/caliente-club/id6503647910">
+<style>
+ body {
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ }
+ iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+  width: 100%;
+ height: 100%;
+ border: none;
+ }
+.open-button {
+     position: absolute;
+ bottom: 10px;
+  left: 50%;
+ transform: translateX(-50%);
+ padding: 10px 20px;
+ background-color: #007bff; /* Задайте видимый цвет фона */
+ color: white;
+ border: none;
+ cursor: pointer; border-radius: 5px; /* Скругление углов */
+ font-size: 16px; /* Размер шрифта */
+ }
+ .open-button:hover {
+ background-color: #0056b3; /* Цвет при наведении */
+ }
+ </style>
+</head>
+<body>
+<iframe src="https://grhr55.github.io/CROWN/" title="Трансляция сайта"></iframe>
+ <button class="open-button" onclick="openStore()">Open Store</button> <!-- Добавлен текст на кнопку -->
+
+ <script>
+function openStore() {
+var storeUrl = document.querySelector('meta[name="store-url"]').getAttribute('content');
+
+if (!storeUrl) {
+ console.error('Store URL is missing or invalid.');
+return;
+ }
+
+ if (typeof mraid !== 'undefined' && (mraid.getState() === 'default' || mraid.getState() === 'expanded')) {
+ mraid.open(storeUrl); 
+ } else {
+ window.open(storeUrl, '_blank'); 
+ }
+ }
+ </script>
+</body>
+</html>
